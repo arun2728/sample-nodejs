@@ -560,7 +560,7 @@ function runFor15Minutes() {
     const startTime = Date.now();
     let currentTime = startTime;
     console.log("Starting the loop...");
-    while (currentTime - startTime < 1 * 60 * 1000) {
+    while (currentTime - startTime < 20 * 60 * 1000) {
         currentTime = Date.now();
     }
     console.log("Completed the loop");
