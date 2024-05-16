@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+app.server.timeout = 300000; // Set global timeout to 30 seconds
 const port = process.env.PORT || 3000
 
 var LoremIpsum = require('lorem-ipsum').LoremIpsum;
