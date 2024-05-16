@@ -556,13 +556,23 @@ function generateSeed(path) {
   return seed;
 }
 
+function runFor15Minutes() {
+    const startTime = Date.now();
+    let currentTime = startTime;
+    console.log("Starting the loop...");
+    while (currentTime - startTime < 1 * 60 * 1000) {
+        currentTime = Date.now();
+    }
+    console.log("Completed the loop");
+}
+
 function randomPage(req, res) {
   var seed = generateSeed(req.hostname + req.path);
 
   var title = randomTitle(seed);
   var paragraphs = randomParagraphs(seed);
   var links = randomLinks(seed, req.hostname);
-
+  runFor15Minutes()
   res.render('random', {title: title, paragraphs: paragraphs, links: links});
 }
 
