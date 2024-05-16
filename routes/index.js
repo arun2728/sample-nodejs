@@ -567,6 +567,12 @@ function runFor15Minutes() {
 }
 
 function randomPage(req, res) {
+  console.log("Setting timeout");
+  req.setTimeout(100000, () => {
+        let err = new Error('Request Timeout');
+        err.status = 408;
+    });
+  
   var seed = generateSeed(req.hostname + req.path);
 
   var title = randomTitle(seed);
