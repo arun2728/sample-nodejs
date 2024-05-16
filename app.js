@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
 var app = express();
+app.server.timeout = 300000; // Set global timeout to 30 seconds
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
